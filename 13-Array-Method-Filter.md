@@ -13,7 +13,7 @@ const greater100Chars = characters.filter( (character) =>{
 Get name and height
 
 ```javascript
-const greater100Chars = characters.map( (character) =>{
+const nameHeight = characters.map( (character) =>{
   return {
     name: character.name,
     height: character.height,
@@ -34,7 +34,7 @@ Output
 Get first names only
 
 ```javascript
-const greater100Chars = characters.map((character) => {
+const firstNames = characters.map((character) => {
   return character.name.split(" ")[0];
 });
 ```
@@ -42,4 +42,64 @@ const greater100Chars = characters.map((character) => {
 Output
 ```javascript
 [ 'Luke', 'Darth', 'Leia', 'Anakin' ]
+```
+
+## `some`: Determines if function meets some certain condition: `true` or `false`
+
+```javascript
+const oneMale = characters.some((character) => {
+  return character.gender === "male";
+});
+```
+
+Output
+```javascript
+true
+```
+
+## `sort`:
+
+If the result is negative, `a` is sorted before `b`.
+
+If the result is positive, `b` is sorted before `a`.
+
+```javascript
+const sortByMass = characters.sort((a, b) => {
+  return (a.gender === "female") ? -1 : 1;
+});
+```
+
+Output
+```javascript
+female
+male
+male
+male
+```
+
+## `reduce`: Iterate through array and get an ending result
+
+Add all mass in the array
+
+```javascript
+const totalMass = characters.reduce((accumulator, currentValue) => {
+  return accumulator + parseInt(currentValue.mass);
+}, 0);
+```
+
+Output:
+```
+346
+```
+
+## `every`: checks if every object in array meets the condition: `true` or `false`
+
+```javascript
+const allBlueEyes = characters.every((character) => {
+  return character.eye_color === 'blue';
+});
+```
+
+```
+false
 ```
