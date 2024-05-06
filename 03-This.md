@@ -29,6 +29,6 @@ const person = {
 
 person.walk();
 
-const walk = person.walk.bind(person);
+const walk = person.walk.bind(person);     //Bind `person` to make `this` reference to person object.
 walk();
 ```
